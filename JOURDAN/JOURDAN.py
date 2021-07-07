@@ -24,9 +24,9 @@ dropcontact_batch = []
 #get all candidates from JOURDAN Lemlist
 jourdan_leads = requests.get('https://api.lemlist.com/api/campaigns/cam_uxTTSAwJBvL5mPap5/export/list?state=all', auth=('', '2d4adb5af04759b8a6f1249608835b96'))
 #csv formating
-with open('JOURDAN/JOURDAN_Lemlist_Leads.csv','wb') as csv_file:
+with open('/Users/solaladamowicz/OneDrive/Desktop/StartupOnly/H3R0N/Lemlist.csv','wb') as csv_file:
 	csv_file.write(jourdan_leads.content)
-with open('JOURDAN/JOURDAN_Lemlist_Leads.csv','r') as csv_file:
+with open('/Users/solaladamowicz/OneDrive/Desktop/StartupOnly/H3R0N/Lemlist.csv','r') as csv_file:
 	file = csv.reader(csv_file, delimiter=',')
 	for row in file:
 		already_existing_candidates.append(row[5])
@@ -34,9 +34,9 @@ with open('JOURDAN/JOURDAN_Lemlist_Leads.csv','r') as csv_file:
 
 #driver setup
 options = webdriver.ChromeOptions()
-options.add_argument("--user-data-dir=profile-julie") #Path to your chrome profile
+options.add_argument("--user-data-dir=/Users/solaladamowicz/OneDrive/Desktop/profile-julie") #Path to your chrome profile
 #options.add_argument("headless")
-driver = webdriver.Chrome(executable_path="chromedriver", options = options)
+driver = webdriver.Chrome(executable_path="/Users/solaladamowicz/OneDrive/Desktop/StartupOnly/H3R0N/SAKHAROV/ROOMBA/chromedriver", options = options)
 driver.implicitly_wait(10)
 
 #scraaaape
@@ -48,7 +48,7 @@ for research in linkedin_researches:
     while nb_scraped_candidates < linkedin_researches[research]:
         linkedin_candidate_pages = {}
         driver.get(research + str(page*25))
-        time.sleep(1)
+        time.sleep(3)
         candidates = driver.find_elements_by_class_name("artdeco-entity-lockup__title.ember-view")
         for candidate in candidates:
             candidate_name = candidate.text
@@ -59,6 +59,7 @@ for research in linkedin_researches:
             linkedin_candidate_pages[candidate_name]=candidate_page_link
 
         if fucked_count == 3:
+            print("fuck")
             break
         if len(linkedin_candidate_pages) == 0:
             page = 0
@@ -75,6 +76,8 @@ for research in linkedin_researches:
             if linkedin_profile_link not in already_existing_candidates:
                 linkedin_candidate_profiles[candidate_page] = [linkedin_profile_link,current_company,research]
                 nb_scraped_candidates += 1
+        print(nb_scraped_candidates)
+        print(linkedin_researches[research])
         page += 1
 driver.close()
 print(str(len(linkedin_candidate_profiles)) + " profiles")
@@ -102,7 +105,7 @@ for i in range(0,(int(len(dropcontact_batch)/200))+1):
 
 dropcontact_result = []
 for batch in dropcontact_batches:
-    dropcontact_batch_request = requests.post("https://api.dropcontact.io/batch",json={"data": dropcontact_batch,'siren': False,},headers={'Content-Type': 'application/json','X-Access-Token': Dropcontact_apiKey})
+    dropcontact_batch_request = requests.post("https://api.dropcontact.io/batch",json={"data": batch,'siren': False,},headers={'Content-Type': 'application/json','X-Access-Token': Dropcontact_apiKey})
     request_id = dropcontact_batch_request.json()["request_id"]
     dropcontact_batch_result = requests.get("https://api.dropcontact.io/batch/" + request_id, headers={'X-Access-Token': Dropcontact_apiKey}).json()
 
@@ -132,7 +135,7 @@ for candidate_data in dropcontact_result:
     if "linkedin" not in candidate_data:
         candidate_data["linkedin"] = dropcontact_batch[dropcontact_result.index(candidate_data)]["linkedin"]
         print("linkedin was missing")
-    data = unicodedata.normalize('NFKD', '{"firstName":"'+candidate_data["first_name"]+'","lastName":"'+candidate_data["last_name"]+'","companyName": "'+dropcontact_batch[dropcontact_result.index(candidate_data)]["category"]+'","linkedinUrl":"'+candidate_data["linkedin"]+'"}').encode('ASCII', 'ignore').decode('utf-8')
+    data = unicodedata.normalize('NFKD', '{"firstName":"'+candidate_data["first_name"]+'","lastName":"'+candidate_data["last_name"]+'","linkedinUrl":"'+candidate_data["linkedin"]+'"}').encode('ASCII', 'ignore').decode('utf-8')
     send_to_lemlist = requests.post("https://api.lemlist.com/api/campaigns/" + lemlist_jourdan_campaignId + "/leads/" + candidate_data["email"][0]["email"] + "?deduplicate=true", headers = {"Content-Type": "application/json"}, data = data, auth = ("", "2d4adb5af04759b8a6f1249608835b96"))
     if str(send_to_lemlist) != "<Response [200]>":
       print (send_to_lemlist.content)
