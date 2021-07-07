@@ -1,3 +1,2 @@
-2021/07/02-12:48:28.889 f203 Reusing MANIFEST /Users/solaladamowicz/OneDrive/Desktop/julie-profile/Default/shared_proto_db/MANIFEST-000001
-2021/07/02-12:48:28.889 f203 Recovering log #3
-2021/07/02-12:48:28.889 f203 Reusing old log /Users/solaladamowicz/OneDrive/Desktop/julie-profile/Default/shared_proto_db/000003.log 
+2021/07/08-01:19:19.371 e503 Creating DB /Users/solaladamowicz/Desktop/profile-julie/Default/shared_proto_db since it was missing.
+2021/07/08-01:19:19.427 e503 Reusing MANIFEST /Users/solaladamowicz/Desktop/profile-julie/Default/shared_proto_db/MANIFEST-000001

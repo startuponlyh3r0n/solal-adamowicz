@@ -1,3 +1,2 @@
-2021/07/02-12:48:29.477 f203 Reusing MANIFEST /Users/solaladamowicz/OneDrive/Desktop/julie-profile/Default/IndexedDB/https_www.linkedin.com_0.indexeddb.leveldb/MANIFEST-000001
-2021/07/02-12:48:29.478 f203 Recovering log #3
-2021/07/02-12:48:29.478 f203 Reusing old log /Users/solaladamowicz/OneDrive/Desktop/julie-profile/Default/IndexedDB/https_www.linkedin.com_0.indexeddb.leveldb/000003.log 
+2021/07/08-01:20:08.470 8f03 Creating DB /Users/solaladamowicz/Desktop/profile-julie/Default/IndexedDB/https_www.linkedin.com_0.indexeddb.leveldb since it was missing.
+2021/07/08-01:20:08.525 8f03 Reusing MANIFEST /Users/solaladamowicz/Desktop/profile-julie/Default/IndexedDB/https_www.linkedin.com_0.indexeddb.leveldb/MANIFEST-000001

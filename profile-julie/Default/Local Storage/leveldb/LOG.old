@@ -1,3 +1,2 @@
-2021/07/02-12:48:28.031 2f03 Reusing MANIFEST /Users/solaladamowicz/OneDrive/Desktop/julie-profile/Default/Local Storage/leveldb/MANIFEST-000001
-2021/07/02-12:48:28.042 2f03 Recovering log #13
-2021/07/02-12:48:28.042 2f03 Reusing old log /Users/solaladamowicz/OneDrive/Desktop/julie-profile/Default/Local Storage/leveldb/000013.log 
+2021/07/08-01:19:18.223 2e03 Creating DB /Users/solaladamowicz/Desktop/profile-julie/Default/Local Storage/leveldb since it was missing.
+2021/07/08-01:19:18.357 2e03 Reusing MANIFEST /Users/solaladamowicz/Desktop/profile-julie/Default/Local Storage/leveldb/MANIFEST-000001
