@@ -34,8 +34,7 @@ with open('JOURDAN/JOURDAN_Lemlist_Leads.csv','r') as csv_file:
 
 #driver setup
 options = webdriver.ChromeOptions()
-options.add_argument("--user-data-dir=profile-julie") #Path to your chrome profile
-#options.add_argument("headless")
+options.add_argument("--user-data-dir=profile-julie")
 driver = webdriver.Chrome(executable_path="chromedriver", options = options)
 driver.implicitly_wait(10)
 
