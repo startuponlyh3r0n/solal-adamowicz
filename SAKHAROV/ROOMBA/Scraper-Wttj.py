@@ -33,7 +33,7 @@ already_imported_companies_name = worksheet_fromscrape.get_col(1)
 #setup chrome driver
 options = webdriver.ChromeOptions()
 options.add_argument("headless")
-driver = webdriver.Chrome(executable_path="chromedriver.exe", options = options)
+driver = webdriver.Chrome(executable_path="chromedriver", options = options)
 driver.implicitly_wait(10)
 
 for job_type in job_type_list : 
@@ -85,7 +85,7 @@ for job_type in job_type_list :
 				day_status = False
 driver.close()
 
-driver = webdriver.Chrome(executable_path="chromedriver.exe", options = options)
+driver = webdriver.Chrome(executable_path="chromedriver", options = options)
 for company in companies_list:
 	driver.get(companies_list[company])
 	company_linkedin_url_temp = driver.find_elements_by_class_name("sc-1552bfn-3.iTMMrn")
