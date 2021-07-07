@@ -22,7 +22,7 @@ jobs:
              pip install pygsheets
       - name: execute SHERLOCK script
         run: |
-          python SAKHAROV/SHERLOCK.py
+          python SAKHAROV/SHERLOCK/SHERLOCK.py
       - name: execute LinkedIn script
         run: |
           python SAKHAROV/ROOMBA/Scraper-LinkedIn.py
