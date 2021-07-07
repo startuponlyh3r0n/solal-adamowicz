@@ -16,7 +16,7 @@ jobs:
         with:
           python-version: 3.9
       - name: install libraries
-        run: pip install mailjet_rest
+        run: pip install selenium
              pip install requests
              pip install datetime
              pip install pygsheets
