@@ -35,8 +35,6 @@ with open('JOURDAN/JOURDAN_Lemlist_Leads.csv','r') as csv_file:
 #driver setup
 options = webdriver.ChromeOptions()
 options.add_argument("--user-data-dir=profile-julie")
-options.add_argument("--remote-debugging-port=9222")  # this
-
 driver = webdriver.Chrome(executable_path="chromedriver", options = options)
 driver.implicitly_wait(10)
 
