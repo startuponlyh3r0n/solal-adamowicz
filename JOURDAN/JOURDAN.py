@@ -24,9 +24,9 @@ dropcontact_batch = []
 #get all candidates from JOURDAN Lemlist
 jourdan_leads = requests.get('https://api.lemlist.com/api/campaigns/cam_uxTTSAwJBvL5mPap5/export/list?state=all', auth=('', '2d4adb5af04759b8a6f1249608835b96'))
 #csv formating
-with open('/Users/solaladamowicz/OneDrive/Desktop/StartupOnly/H3R0N/Lemlist.csv','wb') as csv_file:
+with open('JOURDAN/JOURDAN_Lemlist_Leads.csv','wb') as csv_file:
 	csv_file.write(jourdan_leads.content)
-with open('/Users/solaladamowicz/OneDrive/Desktop/StartupOnly/H3R0N/Lemlist.csv','r') as csv_file:
+with open('JOURDAN/JOURDAN_Lemlist_Leads.csv','r') as csv_file:
 	file = csv.reader(csv_file, delimiter=',')
 	for row in file:
 		already_existing_candidates.append(row[5])
@@ -34,9 +34,9 @@ with open('/Users/solaladamowicz/OneDrive/Desktop/StartupOnly/H3R0N/Lemlist.csv'
 
 #driver setup
 options = webdriver.ChromeOptions()
-options.add_argument("--user-data-dir=/Users/solaladamowicz/OneDrive/Desktop/profile-julie") #Path to your chrome profile
+options.add_argument("--user-data-dir=profile-julie") #Path to your chrome profile
 #options.add_argument("headless")
-driver = webdriver.Chrome(executable_path="/Users/solaladamowicz/OneDrive/Desktop/StartupOnly/H3R0N/SAKHAROV/ROOMBA/chromedriver", options = options)
+driver = webdriver.Chrome(executable_path="chromedriver", options = options)
 driver.implicitly_wait(10)
 
 #scraaaape
