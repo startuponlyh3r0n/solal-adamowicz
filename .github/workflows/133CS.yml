@@ -1,0 +1,35 @@
+name: 133CS - Weekdays1405
+
+on:
+  repository_dispatch:
+    types:  [133CS]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: install libraries
+        run: pip install mailjet_rest
+             pip install requests
+             pip install datetime
+             pip install pygsheets
+      - name: execute Dupont script
+        run: |
+          python 133CS/Dupont.py
+      - name: execute Dupond script
+        run: |
+          python 133CS/Dupond.py
+      - name: execute Haddock script
+        run: |
+          python 133CS/Haddock.py
+      - name: execute Rapport script
+        run: |
+          python 133CS/To-Contact.py
+          
