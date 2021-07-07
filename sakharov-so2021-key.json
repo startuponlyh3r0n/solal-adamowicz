@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sakharov-so2021",
+  "private_key_id": "1a96c5a64146b9842bda5d3b04c88fd966b5ef08",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCnBeuJOizJvDyA\n3pPzfEPWfJTwXd1VrDMivetwjrjCMUjvrIGs4Kbz5JSz4Vxhjt0pof6nGso2mxFJ\nKowdl9PHx40hcmQK0AMdLosJUdyXGUqXDmIpO62fLGVT0mczdDtgT2Cn1eBRJT+L\nBxUvO6I75qAfgZ/oh+/EJ6RaAxAslahhWVrjJeev5Lo+ykTNdqirG5p6rb32xL3w\nhiixNYMaxJ7WgaPZQ7vL6hS4/rHW8h0zeAOGZstbc8geNxG3vwX6fvQoDo+EgPoJ\n4LD9yNuuK6Vulqic7xwYCMb6nGuY1Pu7az1ZDE/AjHV9UhipHoUsDHOzVs3ZnxSE\nvVjHKtHxAgMBAAECggEAAocGBHqIm7/JL0QLbTdtHrSBW84GCnauWIaE37iNnYTk\naAugEEgJx5x8K1qr89DePOWntlkU0pvv/4a4Ib5JemjzW2N9sizbiPvKYETlBdHg\nbz7a+YX7KjnZJgTZHtUnDRaLv0dSbSmzvqAA3ldiuu2ncIm5cz8wP7N4we9GQ+H7\nmzfJ9IHKroHNjBSWnqG59Bjm+mBaVEDW5ouV0ojComv+nRTnm87PCNKdWEBDkTHs\nPOurczw1uoB8pA8TZ2R8zobNQK91txD56kLN77O+ShLn1VQMd05GufFfhGvj0bfR\nRkvQczl1eaYeXQl6r1tv4QBSVKkC8xu/Ohg3dV6qKQKBgQDdIF+/ONUv24Nhltq6\nEClZGkxFvD0O9POutotEjX3zWEuBssYmnPGDHrdF8/andl7xpnYiZCCT8Ds93t6e\nYVgIyGsAlxAGdV/m4vk0A1ufBRRfuz6YgL7UOw77+aDCL8BMJ9whTYbnVhaYek8O\nZYYZkvS2lMxr/wbprJsiXGzBNQKBgQDBXTXwUK2ZP9OWJr8L7/5xPZzCglov4EIk\nG6NnEfENyKY/+5KyjsYxt0jg0QkQCcWU2os92Ahx8mZ3QzgQYP/l41F1lahX5+3W\n5t9oBkEvDh2QLzGurB+UX3Pb5KQBVeZ+37q+KMV9LrEd6/MByap8fkQ12JGf7vq/\nFZlfPNWBTQKBgQChqW52la0+bMSzjx9f0jr4eoJypTkaezjAbZKJzsvbIZ0qODIn\nvqvOyaEB0mdsbNzi3GkXoY4zufkFta+ZqN88pJGd/9Lmdd9kJGI+hYnxSzxm9LTB\nt7ZL4NWGoCzIazKyOp3z9wL+k/C3DwxHITAV+FtSNJzzA6LhKaDNUTbtVQKBgAoO\n4Cxk9fK/yDDKSSvEyxZ23v2bLDfLUYVxTpmg7EoMQuGXI3VYSeTyJL9VAESuTXHF\nwHJyF1ZeBohznan0cbsyjN0x8LTJ4qxIDBzsHl3lPRJv8gSk/WuJX4xzozhSkI/O\n8XbMxiER2bK1wEk6hTy+kKvAXSrVkoN4CydSEcUNAoGAD9kKISdzYwo2SP+zhdRY\n7KV1Jr6iPU2PkmfwwTnudOilP847kRM0ZenxVdMweUQwSncxcn1C5q9t11xIPdrI\nbleoROXt4UZ8bzP1kAbxUxp0ZEcFZsl79+hQi+lCEVLOGB9zMU0RQFXgvECFcVgP\nmArIfDSBlZsuwsIKQr/VfgQ=\n-----END PRIVATE KEY-----\n",
+  "client_email": "sakharov@sakharov-so2021.iam.gserviceaccount.com",
+  "client_id": "107237267506031572454",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sakharov%40sakharov-so2021.iam.gserviceaccount.com"
+}

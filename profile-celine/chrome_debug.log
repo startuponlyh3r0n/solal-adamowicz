@@ -1,0 +1,12 @@
+[4983:771:0701/175037.219781:WARNING:CONSOLE(0)] "The page delivered both an 'X-Frame-Options' header and a 'Content-Security-Policy' header with a 'frame-ancestors' directive. Although the 'X-Frame-Options' header alone would have blocked embedding, it has been ignored.", source: chrome-untrusted://new-tab-page/custom_background_image?url= (0)
+[4983:771:0701/175037.534559:WARNING:CONSOLE(0)] "The page delivered both an 'X-Frame-Options' header and a 'Content-Security-Policy' header with a 'frame-ancestors' directive. Although the 'X-Frame-Options' header alone would have blocked embedding, it has been ignored.", source: chrome-untrusted://new-tab-page/one-google-bar?paramsencoded= (0)
+[4983:771:0701/175054.536036:INFO:CONSOLE(58)] "Using profile voyager-web-feed for route feed.index.index", source: https://static-exp1.licdn.com/sc/h/6oydvamu0ccyz6bjubzwr4zq1 (58)
+[4983:771:0701/175055.257570:INFO:CONSOLE(8)] "visitor.publishDestinations() result: The destination publishing iframe is already attached and loaded.", source: https://platform.linkedin.com/litms/utag/voyager-web-feed/utag.js?cb=1625154600000 (8)
+[4983:771:0701/175055.919597:INFO:CONSOLE(462)] "quill Overwriting modules/clipboard with class extends i{onPaste(e){var t
+if(null===(t=e.clipboardData)||void 0===t?void 0:t.getData("text/link-preview")){const t=this.quill.getSelection()
+if(!t)return super.onPaste(e)
+e.preventDefault()
+const i=e.clipboardData.getData("text/plain"),r=(new n).retain(t.index).delete(t.length).insert(i)
+this.quill.updateContents(r,"silent")
+const a=i.length+t.index,o=0
+this.quill.setSelection(a,o,"silent")}return super.onPaste(e)}}", source: https://static-exp1.licdn.com/sc/h/bo45nv088l7tyo5hiqvdsh4jl (462)
