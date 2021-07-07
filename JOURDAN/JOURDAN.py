@@ -35,7 +35,7 @@ with open('JOURDAN/JOURDAN_Lemlist_Leads.csv','r') as csv_file:
 #driver setup
 options = webdriver.ChromeOptions()
 options.add_argument("--user-data-dir=profile-julie")
-driver = webdriver.Chrome(executable_path="chromedriver.exe", options = options)
+driver = webdriver.Chrome(executable_path="chromedriver", options = options)
 driver.implicitly_wait(10)
 
 #scraaaape
