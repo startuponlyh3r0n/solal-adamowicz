@@ -17,6 +17,7 @@ jobs:
           python-version: 3.9
       - name: install libraries
         run: pip install requests
+             pip install mailjet_rest
              pip install datetime
              pip install pygsheets
       - name: execute Charlie script
