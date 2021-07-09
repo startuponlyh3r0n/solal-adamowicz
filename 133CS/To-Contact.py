@@ -2,6 +2,9 @@ import requests
 import csv
 import datetime
 
+if datetime.date.today().isocalendar()[2]!=1:
+	quit()
+
 past_two_weeks = []
 for i in range(0,15):
     past_two_weeks.append(str(datetime.date.today()-datetime.timedelta(i)))
