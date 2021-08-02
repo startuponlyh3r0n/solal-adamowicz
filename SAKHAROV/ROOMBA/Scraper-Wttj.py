@@ -83,6 +83,8 @@ for job_type in job_type_list :
 			datetime_timestamp = datetime.datetime(year = int(last_timestamp[0:4]), month = int(last_timestamp[5:7]), day = int(last_timestamp[8:10]), hour = int(last_timestamp[11:13]), minute = int(last_timestamp[14:16]), second = int(last_timestamp[17:19]))
 			if datetime_timestamp < yesterday:
 				day_status = False
+			if page_nb > 10:
+				day_status = False
 driver.close()
 
 driver = webdriver.Chrome(executable_path="chromedriver", options = options)
