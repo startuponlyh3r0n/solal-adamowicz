@@ -87,8 +87,8 @@ else:
     post_text += "@"+company_name
 
 if nb_of_ads >= 3:
-    post_text += "! Ils viennent d'ouvrir " + str(nb_of_ads) + " postes sur StartupOnly.\n"
-post_text += "Retrouvez leurs annonces sur startuponly.com\n\n"
+    post_text += "! Ils viennent d'ouvrir " + str(nb_of_ads) + " postes sur StartupOnly."
+post_text += "\nRetrouvez leurs annonces sur startuponly.com\n\n"
 if len(company_description) > 1:
     post_text += "Leur description :\n" + company_description
 print(post_text)
