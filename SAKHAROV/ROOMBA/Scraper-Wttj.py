@@ -61,7 +61,7 @@ for job_type in job_type_list :
 
 		for entry_SL in driver.find_elements_by_class_name("ais-Hits-list-item"):
 			entries.append(entry_SL.get_attribute("innerHTML"))
-
+		print(len(entries))
 		for entry in entries :
 			company_slug = str(entry)[re.search("/companies/",str(entry)).span()[1]:re.search("/jobs/",str(entry)).span()[0]]
 			job = []
@@ -85,6 +85,7 @@ for job_type in job_type_list :
 				day_status = False
 			if page_nb > 10:
 				day_status = False
+		print(len(companies_list))
 driver.close()
 
 driver = webdriver.Chrome(executable_path="chromedriver", options = options)
@@ -102,7 +103,7 @@ for company in companies_list:
 		if (company_linkedin_url not in already_imported_companies_linkedin) and (company not in already_imported_companies_name):
 			companies_dict[company] = [company_linkedin_url,job_type,str(companies_with_recently_opened_positions[company_slug])]
 
-
+print(len(companies_dict))
 count = 0
 for company in companies_dict:
 	company_data = [company]
