@@ -33,7 +33,7 @@ for i in range (0,40):
     
     #make sure it doesn't continue indefinitely
     refresh_count = 0
-    while len(driver.find_elements_by_class_name("flex-grow-1.artdeco-entity-lockup.artdeco-entity-lockup--size-4.ember-view")) == 0:
+    while len(driver.find_elements_by_class_name("job-card-list__entity-lockup.artdeco-entity-lockup.artdeco-entity-lockup--size-4.ember-view")) == 0:
         driver.refresh()
         refresh_count+=1
         if refresh_count == 5:
