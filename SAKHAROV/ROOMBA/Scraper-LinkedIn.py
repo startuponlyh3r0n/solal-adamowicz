@@ -43,7 +43,7 @@ for i in range (0,40):
     
     for results in range (0,8):
         time.sleep(0.5)
-        driver.execute_script("arguments[0].scrollIntoView();", driver.find_elements_by_class_name("flex-grow-1.artdeco-entity-lockup.artdeco-entity-lockup--size-4.ember-view")[-1])
+        driver.execute_script("arguments[0].scrollIntoView();", driver.find_elements_by_class_name("job-card-list__entity-lockup.artdeco-entity-lockup.artdeco-entity-lockup--size-4.ember-view")[-1])
 
     companies_with_link = driver.find_elements_by_class_name("job-card-container__link.job-card-container__company-name.ember-view")
     for company in companies_with_link:
