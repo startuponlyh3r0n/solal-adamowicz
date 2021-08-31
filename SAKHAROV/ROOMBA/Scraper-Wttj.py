@@ -85,6 +85,9 @@ for job_type in job_type_list :
 			if page_nb > 10:
 				day_status = False
 		print(len(companies_list))
+		if len(companies_list)==0:
+			print('rhaaaaa')
+			quit()
 driver.close()
 
 driver = webdriver.Chrome(executable_path="chromedriver")
