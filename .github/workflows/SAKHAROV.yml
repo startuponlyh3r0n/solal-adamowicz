@@ -23,9 +23,6 @@ jobs:
       - name: execute SHERLOCK script
         run: |
           python SAKHAROV/SHERLOCK/SHERLOCK.py
-      - name: execute WttJ script
-        run: |
-          python SAKHAROV/ROOMBA/Scraper-WttJ.py
       - name: execute LinkedIn script
         run: |
           python SAKHAROV/ROOMBA/Scraper-LinkedIn.py
