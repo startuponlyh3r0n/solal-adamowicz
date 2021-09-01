@@ -56,7 +56,7 @@ for job_type in job_type_list :
 			driver.get(URL)
 			if refresh_count > 5:
 				quit()
-
+		time.sleep(3)
 		for entry_SL in driver.find_elements_by_class_name("ais-Hits-list-item"):
 			innerHTML = entry_SL.get_attribute("innerHTML")
 			entries.append(innerHTML)
