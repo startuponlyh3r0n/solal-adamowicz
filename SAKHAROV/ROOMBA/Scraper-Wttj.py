@@ -58,8 +58,8 @@ for job_type in job_type_list :
 				quit()
 
 		for entry_SL in driver.find_elements_by_class_name("ais-Hits-list-item"):
-			entries.append(entry_SL.get_attribute("innerHTML"))
-		print(len(entries))
+			innerHTML = entry_SL.get_attribute("innerHTML")
+			entries.append(innerHTML)
 		for entry in entries :
 			company_slug = str(entry)[re.search("/companies/",str(entry)).span()[1]:re.search("/jobs/",str(entry)).span()[0]]
 			job = []
@@ -83,7 +83,6 @@ for job_type in job_type_list :
 				day_status = False
 			if page_nb > 10:
 				day_status = False
-		print(len(companies_list))
 		if len(companies_list)==0:
 			print('rhaaaaa')
 			quit()
