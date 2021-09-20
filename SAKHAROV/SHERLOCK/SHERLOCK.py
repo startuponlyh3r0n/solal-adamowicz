@@ -27,7 +27,7 @@ with open("SAKHAROV/SHERLOCK/PhantomBuster_Cache_Export.csv", 'r') as pb_csv:
   pb_csv.close()
 cleaned_data = []
 for value in data:
-    if value[1] != '':
+    if value[1] == '':
         cleaned_data.append(value)
 leads_worksheet.update_values('A1',values=cleaned_data)
 
