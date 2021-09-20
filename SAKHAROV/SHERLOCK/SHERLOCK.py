@@ -18,9 +18,7 @@ pgsh = pygsheets.authorize(service_file="sakharov-so2021-key.json")
 sheet_alexandria = pgsh.open("ALEXANDRIA")
 leads_worksheet = sheet_alexandria[1]
 
-for i in range(2, leads_worksheet.rows):
-	if leads_worksheet.get_value("B" + str(i)) != '':
-		leads_worksheet.delete_rows(i,1)
+
 initial_nb_of_rows = leads_worksheet.rows
 
 with open("SAKHAROV/SHERLOCK/PhantomBuster_Cache_Export.csv", 'r') as pb_csv:
