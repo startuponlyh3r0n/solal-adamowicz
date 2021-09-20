@@ -72,7 +72,7 @@ else:
   if len(data_dropcontact)%240 != 1:
     nb +=1
   for i in range(0,nb):
-      j=240
+      j=i*240
       lists[i] = data_dropcontact[0+j:240+j]
   result = []
   for list in lists:
