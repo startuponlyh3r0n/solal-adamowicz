@@ -53,22 +53,45 @@ if len(data_dropcontact) == 0:
 
 Dropcontact_apiKey = "ZIAvGMbQzNIwOf9uhor2FuzUHgZdE2"
 
-dropcontact_batch_request = requests.post("https://api.dropcontact.io/batch",json={"data": data_dropcontact,'siren': False,},headers={'Content-Type': 'application/json','X-Access-Token': Dropcontact_apiKey})
-request_id = dropcontact_batch_request.json()["request_id"]
-dropcontact_batch_result = requests.get("https://api.dropcontact.io/batch/" + request_id, headers={'X-Access-Token': Dropcontact_apiKey}).json()
-
-sleeping_time = 0
-while dropcontact_batch_result["success"] is False:
-  sleeping_time += 30
-  time.sleep(30)
-  print ("still buffering : " + str(sleeping_time) + " seconds")
+if len(data_dropcontact) < 240:
+  dropcontact_batch_request = requests.post("https://api.dropcontact.io/batch",json={"data": data_dropcontact,'siren': False,},headers={'Content-Type': 'application/json','X-Access-Token': Dropcontact_apiKey})
+  request_id = dropcontact_batch_request.json()["request_id"]
   dropcontact_batch_result = requests.get("https://api.dropcontact.io/batch/" + request_id, headers={'X-Access-Token': Dropcontact_apiKey}).json()
 
+  sleeping_time = 0
+  while dropcontact_batch_result["success"] is False:
+    sleeping_time += 30
+    time.sleep(30)
+    print ("still buffering : " + str(sleeping_time) + " seconds")
+    dropcontact_batch_result = requests.get("https://api.dropcontact.io/batch/" + request_id, headers={'X-Access-Token': Dropcontact_apiKey}).json()
+  result = dropcontact_batch_result["data"]
 
+else:
+  nb = (len(data_dropcontact)-(len(data_dropcontact)%240))/240
+  lists = []
+  if len(data_dropcontact)%240 != 1:
+    nb +=1
+  for i in range(0,nb):
+      j=240
+      lists[i] = data_dropcontact[0+j:240+j]
+  result = []
+  for list in lists:
+      dropcontact_batch_request = requests.post("https://api.dropcontact.io/batch",json={"data": list,'siren': False,},headers={'Content-Type': 'application/json','X-Access-Token': Dropcontact_apiKey})
+      request_id = dropcontact_batch_request.json()["request_id"]
+      dropcontact_batch_result = requests.get("https://api.dropcontact.io/batch/" + request_id, headers={'X-Access-Token': Dropcontact_apiKey}).json()
+      sleeping_time = 0
+      while dropcontact_batch_result["success"] is False:
+        sleeping_time += 30
+        time.sleep(30)
+        print ("still buffering : " + str(sleeping_time) + " seconds")
+        dropcontact_batch_result = requests.get("https://api.dropcontact.io/batch/" + request_id, headers={'X-Access-Token': Dropcontact_apiKey}).json()
+    
+      result.extend(dropcontact_batch_result["data"])
+        
 lemlist_cyrus_campaignId = requests.get("https://api.lemlist.com/api/campaigns", auth=("", "2d4adb5af04759b8a6f1249608835b96")).json()[1]["_id"]
 
 count = 0
-for lead_data in dropcontact_batch_result["data"]:
+for lead_data in result:
   if "email" in lead_data:
     count += 1
     if "first_name" not in lead_data:
