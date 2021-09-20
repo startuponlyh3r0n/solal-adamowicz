@@ -25,7 +25,11 @@ with open("SAKHAROV/SHERLOCK/PhantomBuster_Cache_Export.csv", 'r') as pb_csv:
   reader = csv.reader(pb_csv, skipinitialspace=True, delimiter=',', quotechar='"')
   data = list(reader)
   pb_csv.close()
-leads_worksheet.update_values('A1',values=data)
+cleaned_data = []
+for value in data:
+    if value[1] != '':
+        cleaned_data.append(value)
+leads_worksheet.update_values('A1',values=cleaned_data)
 
 leads_worksheet.refresh()
 print(initial_nb_of_rows, leads_worksheet.rows+1)
