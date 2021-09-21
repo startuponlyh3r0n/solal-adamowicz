@@ -67,9 +67,9 @@ if len(data_dropcontact) < 240:
   result = dropcontact_batch_result["data"]
 
 else:
-  nb = (len(data_dropcontact)-(len(data_dropcontact)%240))/240
+  nb = int((len(data_dropcontact)-(len(data_dropcontact)%240))/240)
   lists = []
-  if len(data_dropcontact)%240 != 1:
+  if len(data_dropcontact)%240 != 0:
     nb +=1
   for i in range(0,nb):
       j=i*240
